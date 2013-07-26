@@ -1,0 +1,83 @@
+<!DOCTYPE html> 
+<html> 
+<head> 
+<meta charset="UTF-8"> 
+<title></title>
+<style>
+* {
+	padding: 0;
+	margin: 0;
+	list-style: none;
+}
+.work_slideshow {
+	position: absolute;
+	width: 100%;
+}
+.work_slideshow img {
+
+}
+.work_nav {
+	position: absolute;
+	z-index: 100;
+	margin: 20px;
+	width: 100%;
+	background-color: rgba(255,255,255,.5);
+
+}
+.nav_prev, .nav_next {
+	background-color: blue;
+	z-index: 120;}
+.nav_prev {
+	float: left;
+}
+.nav_next {
+	float: right;
+}
+ul li {
+	width: 33%;
+	height: 10px;
+	width: 10px;
+	background-color: white;
+	border-radius: 5px;
+	margin-right: 20px;
+	float: left;
+	opacity: .75;
+}
+.activeSlide {
+	background-color: black;
+}
+</style>
+</head>
+<body>
+<div class="nav_prev">prev</div>
+<div class="nav_next">next</div>
+	<div class="work_nav">
+		<ul></ul>
+	</div>
+	
+	<div class="work_slideshow">
+	    <!-- empty element for pager links -->
+	    <img src="http://jquery.malsup.com/cycle2/images/p1.jpg">
+	    <img src="http://jquery.malsup.com/cycle2/images/p2.jpg">
+	    <img src="http://jquery.malsup.com/cycle2/images/p3.jpg">
+	    <img src="http://jquery.malsup.com/cycle2/images/p4.jpg">
+	</div>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+    <script src="../_js/jquery.cycle.js"></script>
+    <script>
+    
+		$('.work_slideshow').cycle({ 
+		    fx:     'scrollRight', 
+		    speed:  'slow', 
+		    timeout: 0, 
+		    pager:  '.work_nav ul',
+		    pagerAnchorBuilder: function(idx, slide) { 
+		        return '<li></li>'; 
+		    },
+		    next:   '.nav_next', 
+		    prev:   '.nav_prev' 
+		});
+    	
+    </script>
+</body>
+</html>

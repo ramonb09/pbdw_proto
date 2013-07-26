@@ -1,0 +1,55 @@
+<!DOCTYPE html> 
+<html> 
+<head> 
+<meta charset="UTF-8"> 
+<title></title>
+<style>
+* {
+	padding: 0;
+	margin: 0;
+}
+.cycle-slideshow {
+	margin: 20px;
+	img {
+		z-index: 100;
+	}
+}
+
+.cycle-pager .ss {
+	margin-right: 10px;
+	width: 5px;
+	height: 20px;
+	background-color: #eee;
+	float: left;
+	cursor: pointer;
+}
+.cycle-pager .cycle-pager-active {
+	background-color: #000;
+}
+.cycle-pager {
+	display: block;
+	height: 30px;
+	z-index: 500;
+}
+</style>
+</head>
+<body>
+	<div class="cycle-slideshow" 
+	    data-cycle-fx=scrollHorz
+	    data-cycle-timeout=0
+	    data-cycle-pager-template="<div class='ss'></div>"
+	    >
+	    <!-- empty element for pager links -->
+	    <img src="http://jquery.malsup.com/cycle2/images/p1.jpg">
+	    <img src="http://jquery.malsup.com/cycle2/images/p2.jpg">
+	    <img src="http://jquery.malsup.com/cycle2/images/p3.jpg">
+	    <img src="http://jquery.malsup.com/cycle2/images/p4.jpg">
+	    <div class="cycle-pager"></div>
+	</div>
+	
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+    <script src="../_js/jquery.cycle2.min.js"></script>
+    <script>
+    </script>
+</body>
+</html>
